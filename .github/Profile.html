@@ -1,20 +1,30 @@
-name: Jekyll site CI
+<!Doctype html>
+<title> "My Portfolio" </Title>
+<head>
+  
+  <body>
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+<nav id="navbar" class="nav">
+  <ul class="nav-list">
+    <li>
+      <a href="#welcome-section">About</a>
+    </li>
+    <li>
+      <a href="#projects">My Projects</a>
+    </li>
+    <li>
+      <a href="#contact">Contact</a>
+    </li>
+  </ul>
+</nav>
 
-jobs:
-  build:
+<!-- END NAV -->
 
-    runs-on: ubuntu-latest
+<!-- START WELCOME SECTION -->
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build the site in the jekyll/builder container
-      run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+<section id="welcome-section" class="welcome-section">
+  <h1>Hi! I am Abhishek</h1>
+  <p>a web developer</p>
+</section>
+
+<!-- END WELCOME SECTION -->
